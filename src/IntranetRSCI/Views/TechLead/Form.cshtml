@@ -1,8 +1,79 @@
-﻿@{
+﻿@model IntranetRSCI.Models.TechLead
+@{
 
     ViewData["Title"] = "Tech Lead Form";
 
 }
 
 <h2>Tech Lead Form</h2>
+
+<form asp-action="Submit">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="TechFirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TechFirstName" class="form-control" />
+                <span asp-validation-for="TechFirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TechLastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TechLastName" class="form-control" />
+                <span asp-validation-for="TechLastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Customer" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Customer" class="form-control" />
+                <span asp-validation-for="Customer" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ContactName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ContactName" class="form-control" />
+                <span asp-validation-for="ContactName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ContactPhone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ContactPhone" class="form-control" />
+                <span asp-validation-for="ContactPhone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ContactEmail" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ContactEmail" class="form-control" />
+                <span asp-validation-for="ContactEmail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ContactAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="ContactAddress" class="form-control"></textarea>
+                <span asp-validation-for="ContactAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Notes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <!-- <input asp-for="Notes" class="form-control" type="textarea" /> -->
+                <textarea asp-for="Notes" class="form-control"></textarea>
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
 
