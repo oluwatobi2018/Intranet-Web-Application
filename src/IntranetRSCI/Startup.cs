@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using IntranetRSCI.Models;
+using IntranetRSCI.Config;
+using Microsoft.EntityFrameworkCore;
 
 namespace IntranetRSCI
 {
@@ -33,6 +36,10 @@ namespace IntranetRSCI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connection = @"Server={0};Database={1};user id={2};password={3};";
+            connection = String.Format(connection, DBConfig.DATABASE_HOST, DBConfig.DATABASE_NAME, DBConfig.USERNAME, DBConfig.PASSWORD);
+            services.AddDbContext<IntranetRSCIContext>(options => options.UseSqlServer(connection));
+
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
