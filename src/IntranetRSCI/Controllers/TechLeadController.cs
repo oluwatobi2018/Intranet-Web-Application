@@ -37,6 +37,7 @@ namespace IntranetRSCI.Controllers
         {
             if(ModelState.IsValid)
             {
+                techLead.DateAdded = DateTime.Now;
                 _context.TechLeads.Add(techLead);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
