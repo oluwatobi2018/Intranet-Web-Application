@@ -14,14 +14,14 @@
         <div class="form-group">
             <label asp-for="TechFirstName" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="TechFirstName" class="form-control" />
+                <input asp-for="TechFirstName" class="form-control" value="@{@User.Identity.Name.Split('.')[0].Split('\\')[1].ToUpper()}" />
                 <span asp-validation-for="TechFirstName" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="TechLastName" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="TechLastName" class="form-control" />
+                <input asp-for="TechLastName" class="form-control" value="@{@User.Identity.Name.Split('.')[1].ToUpper()}"/>
                 <span asp-validation-for="TechLastName" class="text-danger"></span>
             </div>
         </div>
