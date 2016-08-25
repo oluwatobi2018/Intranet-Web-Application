@@ -10,7 +10,7 @@ namespace IntranetRSCI.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return Redirect("http://raymondsci.com/");
         }
 
         public IActionResult About()
