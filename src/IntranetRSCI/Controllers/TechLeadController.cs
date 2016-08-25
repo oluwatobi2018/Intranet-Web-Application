@@ -40,10 +40,16 @@ namespace IntranetRSCI.Controllers
                 techLead.DateAdded = DateTime.Now;
                 _context.TechLeads.Add(techLead);
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Submitted");
             }
 
             return View("Error");
+        }
+
+        [HttpGet]
+        public IActionResult Submitted()
+        {
+            return View();
         }
     }
 }
