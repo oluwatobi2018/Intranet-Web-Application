@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace IntranetRSCI.Config
 {
+
     public class DBConfig
     {
         public const string DATABASE_HOST = "{Type Database Host Name/IP Here}";
